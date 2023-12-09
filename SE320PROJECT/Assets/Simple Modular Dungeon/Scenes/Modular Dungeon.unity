@@ -11318,7 +11318,7 @@ GameObject:
   - component: {fileID: 958061497}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11455,10 +11455,11 @@ Transform:
   m_GameObject: {fileID: 958061488}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.39, y: 1.38, z: -1.97}
-  m_LocalScale: {x: 0.5334866, y: 0.5334866, z: 0.5154067}
+  m_LocalPosition: {x: -6.79, y: 4.13, z: 48.978}
+  m_LocalScale: {x: 0.69854736, y: 0.69854736, z: 0.67487353}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1126556232}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &958061494
@@ -13805,12 +13806,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1126556229}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.325, y: 1.65, z: -2.073}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.121839866, y: 0.5061045, z: -0.19984202}
+  m_LocalScale: {x: 1.8744613, y: 1.8744613, z: 1.9402152}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 958061493}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1127192298
 PrefabInstance:
@@ -14818,7 +14819,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: 771f3818c0827634d816b403589e522f, type: 2}
+  m_NavMeshData: {fileID: 0}
   m_BuildHeightMesh: 0
 --- !u!1001 &1210538186
 PrefabInstance:
@@ -23798,14 +23799,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2140048114}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.62, y: 1.58, z: 2.65}
-  m_LocalScale: {x: 0.726, y: 0.726, z: 0.726}
+  m_LocalRotation: {x: -0, y: -0.60591835, z: -0, w: -0.7955268}
+  m_LocalPosition: {x: -2.1, y: 4.02, z: 49.75}
+  m_LocalScale: {x: 0.867207, y: 0.867207, z: 0.867207}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 403340173}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -285.41, z: 0}
 --- !u!114 &2140048119
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30589,6 +30590,5 @@ SceneRoots:
   - {fileID: 776673519}
   - {fileID: 1345838117}
   - {fileID: 1201869165}
-  - {fileID: 1126556232}
   - {fileID: 958061493}
   - {fileID: 2140048118}

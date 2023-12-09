@@ -45,7 +45,15 @@ public class EnemyAI : MonoBehaviour
       {
          if (Vector3.Distance(fpsc.transform.position,transform.position)<viewDistance)
          {
-            OnAware();
+            RaycastHit hit;
+            if (Physics.Linecast(transform.position, fpsc.transform.position, out hit, -1))
+            {
+               if (hit.transform.CompareTag("Player"))
+               {
+                  OnAware();
+               }
+            }
+            
          }
       }
    }
