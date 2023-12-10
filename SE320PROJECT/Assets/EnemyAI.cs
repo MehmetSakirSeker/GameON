@@ -1,7 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using StarterAssets;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -11,6 +7,8 @@ public class EnemyAI : MonoBehaviour
    private bool isAware = false;
    public float fov = 120f;
    public float viewDistance = 10f;
+   public float wanderRadius = 6f;
+   private Vector3 wanderPoint;
    private NavMeshAgent agent;
    private Renderer renderer;
 
@@ -18,6 +16,7 @@ public class EnemyAI : MonoBehaviour
    {
       agent = GetComponent<NavMeshAgent>();
       renderer = GetComponent<Renderer>();
+      wanderPoint = RandomWanderPoint();
    }
 
    private void Update()
@@ -30,7 +29,20 @@ public class EnemyAI : MonoBehaviour
       } else
       {
          SearchForPlayer();
+         Wander();
          renderer.material.color = Color.blue;
+      }
+   }
+
+   public void Wander()
+   {
+      if (Vector3.Distance(transform.position, wanderPoint)<2f)
+      {
+         wanderPoint = RandomWanderPoint();
+      }
+      else
+      {
+         agent.SetDestination(wanderPoint);
       }
    }
 
@@ -56,5 +68,14 @@ public class EnemyAI : MonoBehaviour
             
          }
       }
+   }
+
+   public Vector3 RandomWanderPoint()
+   {
+      Vector3 randomPoint = (UnityEngine.Random.insideUnitSphere * wanderRadius) + transform.position;
+      NavMeshHit navHit;
+      NavMesh.SamplePosition(randomPoint, out navHit, wanderRadius, -1);
+
+      return new Vector3(navHit.position.x, transform.position.y, navHit.position.z);
    }
 }
