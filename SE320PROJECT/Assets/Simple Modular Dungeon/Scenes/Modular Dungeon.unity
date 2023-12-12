@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311924, g: 0.38073963, b: 0.3587269, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4738,7 +4738,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -11469,7 +11469,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movement:
     isDebugLog: 0
-    movementInputValues: {x: 1, y: 1, z: 1}
+    movementInputValues: {x: 2, y: 2, z: 1}
     runningInputValue: 0
     jumpingInputValue: 0
     referenceAcceleration: 2.66
@@ -11586,14 +11586,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 958061488}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: 0.6618654, z: -0, w: 0.74962276}
   m_LocalPosition: {x: -6.79, y: 4.13, z: 48.978}
   m_LocalScale: {x: 0.69854736, y: 0.69854736, z: 0.67487353}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1126556232}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 82.885, z: 0}
 --- !u!54 &958061494
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -11634,7 +11634,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shootSound: {fileID: 8300000, guid: 8cecf5a0f4952ae4faef9cae31850175, type: 3}
-  soundIntensity: 10
+  soundIntensity: 20
   zombieLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -24210,14 +24210,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2140048114}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.60591835, z: -0, w: -0.7955268}
-  m_LocalPosition: {x: -2.1, y: 4.02, z: 49.75}
+  m_LocalRotation: {x: -0, y: -0.6079717, z: -0, w: -0.7939587}
+  m_LocalPosition: {x: -2.1, y: 4.4, z: 49.75}
   m_LocalScale: {x: 0.867207, y: 0.867207, z: 0.867207}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 403340173}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: -285.41, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -285.114, z: 0}
 --- !u!114 &2140048119
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24231,9 +24231,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fpsc: {fileID: 958061489}
+  timeToLosePlayer: 2
+  loseTimer: 0
   fov: 120
   viewDistance: 10
   wanderRadius: 6
+  wanderingSpeed: 1.3
+  chaseSpeed: 1.8
 --- !u!195 &2140048120
 NavMeshAgent:
   m_ObjectHideFlags: 0
