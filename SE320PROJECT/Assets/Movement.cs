@@ -37,7 +37,7 @@ namespace AFPC {
         private float endurance = 20.0f;
 
         [Header("Jumping")]
-        public float jumpForce = 7.5f;
+        public float jumpForce = 2.5f;
         private bool isJumpingAvailable = true;
         private bool isAirControl = true;
         private Vector3 groungCheckPosition;

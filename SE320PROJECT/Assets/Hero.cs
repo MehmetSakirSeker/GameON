@@ -54,9 +54,7 @@ public class Hero : MonoBehaviour {
 
         /* Control the speed */
         movement.Running();
-
-        /* Control the jumping, ground search... */
-        movement.Jumping();
+        
         
     }
 
@@ -67,6 +65,9 @@ public class Hero : MonoBehaviour {
 
         /* Physical rotation with camera */
         overview.RotateRigigbodyToLookDirection (movement.rb);
+        
+        /* Control the jumping, ground search... */
+        movement.Jumping();
     }
 
     private void LateUpdate () {
