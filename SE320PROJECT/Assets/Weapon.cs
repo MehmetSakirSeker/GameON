@@ -9,15 +9,13 @@ public class Weapon : MonoBehaviour
     [SerializeField] Camera FPCamera;
     [SerializeField] float range = 100f;
     [SerializeField] float damage = 50f;
-    [SerializeField] private float shootCooldown = 1.5f;
-    private float shootLastTime;
 
     void Update()
     {
-        if (Input.GetButtonDown("Fire1") && Time.time - shootLastTime > shootCooldown)
+        if (Input.GetButtonDown("Fire1"))
         {
             Shoot();
-            shootLastTime = Time.time;
+
         }
     }
 
