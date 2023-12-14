@@ -41,7 +41,11 @@ public class EnemyAI : MonoBehaviour
          else
          {
             agent.SetDestination(fpsc.transform.position);
+<<<<<<< Updated upstream
             animator.SetBool("Aware",true);
+=======
+            renderer.material.color = Color.red;
+>>>>>>> Stashed changes
             agent.speed = chaseSpeed;
             if (!isDetecting)
             {
@@ -75,6 +79,12 @@ public class EnemyAI : MonoBehaviour
       
    }
 
+   public float DistanceToPlayer()
+   {
+      float distance = Vector3.Distance(transform.position, fpsc.transform.position);
+      return distance;
+   }
+
    public void Wander()
    {
       if (Vector3.Distance(transform.position, wanderPoint)<2f)
@@ -92,6 +102,11 @@ public class EnemyAI : MonoBehaviour
       isAware = true;
       isDetecting = true;
       loseTimer = 0;
+   }
+
+   public void AttackPlayer()
+   {
+      
    }
 
    public void SearchForPlayer()
