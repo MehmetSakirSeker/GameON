@@ -9,6 +9,7 @@ public class EnemyAI : MonoBehaviour
 
    public float timeToLosePlayer = 5f;
    public float loseTimer = 0f;
+   public float attackDistance = 5f;
    
    public float fov = 120f;
    public float viewDistance = 10f;
@@ -17,40 +18,60 @@ public class EnemyAI : MonoBehaviour
    private NavMeshAgent agent;
    private Renderer renderer;
     
-   public float wanderingSpeed = 1.3f;
-   public float chaseSpeed = 1.8f; 
+   public float wanderingSpeed = 1.4f;
+   public float chaseSpeed = 2f;
+   public Animator animator;
 
    private void Start()
    {
       agent = GetComponent<NavMeshAgent>();
       renderer = GetComponent<Renderer>();
       wanderPoint = RandomWanderPoint();
+      animator = GetComponentInChildren<Animator>();
    }
 
    private void Update()
    {
       if (isAware)
       {
-         agent.SetDestination(fpsc.transform.position);
-         renderer.material.color = Color.red;
-         agent.speed = chaseSpeed;
-         if (!isDetecting)
+         if (DistanceToPlayer() <= attackDistance)
          {
-            loseTimer += Time.deltaTime;
-            if (loseTimer>=timeToLosePlayer)
+            AttackPlayer();
+         }
+         else
+         {
+            agent.SetDestination(fpsc.transform.position);
+            animator.SetBool("Aware",true);
+            agent.speed = chaseSpeed;
+            if (!isDetecting)
             {
-               isAware = false;
-               loseTimer = 0;
+               loseTimer += Time.deltaTime;
+               if (loseTimer>=timeToLosePlayer)
+               {
+                  isAware = false;
+                  loseTimer = 0;
+               }
             }
          }
+         
 
       } else
       {
          Wander();
-         renderer.material.color = Color.blue;
+         animator.SetBool("Aware",false);
          agent.speed = wanderingSpeed;
       }
       SearchForPlayer();
+      
+   }
+   public float DistanceToPlayer()
+   {
+      float distance = Vector3.Distance(transform.position, fpsc.transform.position);
+      return distance;
+   }
+
+   public void AttackPlayer()
+   {
       
    }
 
