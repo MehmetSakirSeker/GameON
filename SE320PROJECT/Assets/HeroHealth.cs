@@ -15,4 +15,9 @@ public class HeroHealth : MonoBehaviour
             return;
         }
     }
+
+    public float getHitPoints()
+    {
+        return hitPoints;
+    }
 }

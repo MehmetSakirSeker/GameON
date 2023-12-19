@@ -29,12 +29,14 @@ public class EnemyAI : MonoBehaviour
     
    public float wanderingSpeed = 1.4f;
    public float chaseSpeed = 2f;
+   private Animator animator;
 
    private void Start()
    {
       agent = GetComponent<NavMeshAgent>();
       renderer = GetComponent<Renderer>();
       wanderPoint = RandomWanderPoint();
+      animator = GetComponentInChildren<Animator>();
    }
 
    private void Update()
@@ -45,8 +47,20 @@ public class EnemyAI : MonoBehaviour
          {
             if (waitingTimeForAttacking<=0f)
             {
-               AttackPlayer();
-               waitingTimeForAttacking = 1f;
+               
+               if (fpsc.GetComponent<HeroHealth>().getHitPoints() <=0)
+               {
+                  animator.SetBool("isAttacking",false);
+                  animator.SetBool("isPlayerLiving",false);
+               }
+               else
+               {
+                  animator.SetBool("isAttacking",true);
+                  animator.SetBool("isPlayerLiving",true);
+                  AttackPlayer();
+                  waitingTimeForAttacking = 1f;
+               }
+               
             }
             else
             {
@@ -56,7 +70,8 @@ public class EnemyAI : MonoBehaviour
          else
          {
             agent.SetDestination(fpsc.transform.position);
-            renderer.material.color = Color.red;
+            animator.SetBool("Aware",true);
+            //renderer.material.color = Color.red;
             agent.speed = chaseSpeed;
             if (!isDetecting)
             {
@@ -73,7 +88,8 @@ public class EnemyAI : MonoBehaviour
       } else
       {
          Wander();
-         renderer.material.color = Color.blue;
+         animator.SetBool("Aware",false);
+         //renderer.material.color = Color.blue;
          agent.speed = wanderingSpeed;
       }
       SearchForPlayer();
@@ -87,6 +103,7 @@ public class EnemyAI : MonoBehaviour
 
    public void AttackPlayer()
    {
+      
       fpsc.GetComponent<HeroHealth>().TakeDamage(20);
       
    }
@@ -125,10 +142,12 @@ public class EnemyAI : MonoBehaviour
             {
                if (waitingTimeForWandering<=0f)
                {
+                  animator.SetBool("isStanding",false);
                   agent.SetDestination(waypoints[waypointIndex].position);
                }
                else
                {
+                  animator.SetBool("isStanding",true);
                   waitingTimeForWandering -= Time.deltaTime;
                }
             }

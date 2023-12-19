@@ -12657,6 +12657,61 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1030089991}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1055564727
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1055564729}
+  - component: {fileID: 1055564728}
+  m_Layer: 0
+  m_Name: Enemy
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!136 &1055564728
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1055564727}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &1055564729
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1055564727}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.17527974, y: -0.6733647, z: 0.16906154, w: -0.6980511}
+  m_LocalPosition: {x: -6.473118, y: 7.087672, z: 50.445045}
+  m_LocalScale: {x: 0.867207, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1067757342
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26943,6 +26998,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: AI
       objectReference: {fileID: 0}
+    - target: {fileID: 6581753526651787381, guid: 7a0ed12f328339241b69eeb66577d02b,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8077629007116292331, guid: 7a0ed12f328339241b69eeb66577d02b,
         type: 3}
       propertyPath: fpsc
@@ -26974,7 +27034,8 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 522924374}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 3082849982393089923, guid: 7a0ed12f328339241b69eeb66577d02b, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a0ed12f328339241b69eeb66577d02b, type: 3}
@@ -31080,3 +31141,4 @@ SceneRoots:
   - {fileID: 481792256}
   - {fileID: 1113477873}
   - {fileID: 522924374}
+  - {fileID: 1055564729}
