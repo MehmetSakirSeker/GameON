@@ -3,9 +3,17 @@ using UnityEngine.AI;
 
 public class EnemyAI : MonoBehaviour
 {
+   public enum WanderType
+   {
+      Random,Waypoint
+   }
    public Hero fpsc;
    private bool isAware = false;
+   public WanderType wanderType = WanderType.Random;
    private bool isDetecting = false;
+   public Transform[] waypoints;
+   public int waypointIndex = 0;
+   public double waitingTime = 3f;
 
    public float timeToLosePlayer = 5f;
    public float loseTimer = 0f;
@@ -41,7 +49,7 @@ public class EnemyAI : MonoBehaviour
          else
          {
             agent.SetDestination(fpsc.transform.position);
-            animator.SetBool("Aware",true);
+            renderer.material.color = Color.red;
             agent.speed = chaseSpeed;
             if (!isDetecting)
             {
@@ -58,7 +66,7 @@ public class EnemyAI : MonoBehaviour
       } else
       {
          Wander();
-         animator.SetBool("Aware",false);
+         renderer.material.color = Color.blue;
          agent.speed = wanderingSpeed;
       }
       SearchForPlayer();
@@ -77,14 +85,52 @@ public class EnemyAI : MonoBehaviour
 
    public void Wander()
    {
-      if (Vector3.Distance(transform.position, wanderPoint)<2f)
+      if (wanderType == WanderType.Random)
       {
-         wanderPoint = RandomWanderPoint();
+         if (Vector3.Distance(transform.position, wanderPoint)<2f)
+         {
+            wanderPoint = RandomWanderPoint();
+         }
+         else
+         {
+            agent.SetDestination(wanderPoint);
+         }
       }
       else
       {
-         agent.SetDestination(wanderPoint);
+         if (waypoints.Length>=2f)
+         {
+            if (Vector3.Distance(waypoints[waypointIndex].position, transform.position)<2f)
+            {
+               if (waypointIndex == waypoints.Length-1)
+               {
+                  waypointIndex = 0;
+               }
+               else
+               {
+                  waypointIndex++;
+               }
+
+               waitingTime = 5f;
+            }
+            else
+            {
+               if (waitingTime<=0f)
+               {
+                  agent.SetDestination(waypoints[waypointIndex].position);
+               }
+               else
+               {
+                  waitingTime -= Time.deltaTime;
+               }
+            }
+         }
+         else
+         {
+            Debug.LogWarning("Waypoint number must be bigger than 2. => "+gameObject.name);
+         }
       }
+      
    }
 
    public void OnAware()
