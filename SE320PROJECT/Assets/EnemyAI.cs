@@ -13,7 +13,8 @@ public class EnemyAI : MonoBehaviour
    private bool isDetecting = false;
    public Transform[] waypoints;
    public int waypointIndex = 0;
-   public double waitingTime = 3f;
+   public double waitingTimeForWandering = 3f;
+   public double waitingTimeForAttacking = 1f;
 
    public float timeToLosePlayer = 5f;
    public float loseTimer = 0f;
@@ -28,14 +29,12 @@ public class EnemyAI : MonoBehaviour
     
    public float wanderingSpeed = 1.4f;
    public float chaseSpeed = 2f;
-   public Animator animator;
 
    private void Start()
    {
       agent = GetComponent<NavMeshAgent>();
       renderer = GetComponent<Renderer>();
       wanderPoint = RandomWanderPoint();
-      animator = GetComponentInChildren<Animator>();
    }
 
    private void Update()
@@ -44,7 +43,15 @@ public class EnemyAI : MonoBehaviour
       {
          if (DistanceToPlayer() <= attackDistance)
          {
-            AttackPlayer();
+            if (waitingTimeForAttacking<=0f)
+            {
+               AttackPlayer();
+               waitingTimeForAttacking = 1f;
+            }
+            else
+            {
+               waitingTimeForAttacking -= Time.deltaTime;
+            }
          }
          else
          {
@@ -80,6 +87,7 @@ public class EnemyAI : MonoBehaviour
 
    public void AttackPlayer()
    {
+      fpsc.GetComponent<HeroHealth>().TakeDamage(20);
       
    }
 
@@ -111,17 +119,17 @@ public class EnemyAI : MonoBehaviour
                   waypointIndex++;
                }
 
-               waitingTime = 5f;
+               waitingTimeForWandering = 5f;
             }
             else
             {
-               if (waitingTime<=0f)
+               if (waitingTimeForWandering<=0f)
                {
                   agent.SetDestination(waypoints[waypointIndex].position);
                }
                else
                {
-                  waitingTime -= Time.deltaTime;
+                  waitingTimeForWandering -= Time.deltaTime;
                }
             }
          }
