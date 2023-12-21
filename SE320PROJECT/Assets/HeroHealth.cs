@@ -9,6 +9,7 @@ public class HeroHealth : MonoBehaviour
     public void TakeDamage(float damage)
     {
         hitPoints -= damage;
+        Debug.Log("Player health = "+hitPoints);
         if (hitPoints <= 0)
         {
             Destroy(gameObject);

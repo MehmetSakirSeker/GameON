@@ -25,18 +25,16 @@ public class EnemyAI : MonoBehaviour
    public float wanderRadius = 6f;
    private Vector3 wanderPoint;
    private NavMeshAgent agent;
-   private Renderer renderer;
     
    public float wanderingSpeed = 1.4f;
    public float chaseSpeed = 2f;
-   private Animator animator;
+   public Renderer renderer;
 
    private void Start()
    {
       agent = GetComponent<NavMeshAgent>();
-      renderer = GetComponent<Renderer>();
       wanderPoint = RandomWanderPoint();
-      animator = GetComponentInChildren<Animator>();
+      renderer = GetComponent<Renderer>();
    }
 
    private void Update()
@@ -47,20 +45,8 @@ public class EnemyAI : MonoBehaviour
          {
             if (waitingTimeForAttacking<=0f)
             {
-               
-               if (fpsc.GetComponent<HeroHealth>().getHitPoints() <=0)
-               {
-                  animator.SetBool("isAttacking",false);
-                  animator.SetBool("isPlayerLiving",false);
-               }
-               else
-               {
-                  animator.SetBool("isAttacking",true);
-                  animator.SetBool("isPlayerLiving",true);
                   AttackPlayer();
                   waitingTimeForAttacking = 1f;
-               }
-               
             }
             else
             {
@@ -70,8 +56,7 @@ public class EnemyAI : MonoBehaviour
          else
          {
             agent.SetDestination(fpsc.transform.position);
-            animator.SetBool("Aware",true);
-            //renderer.material.color = Color.red;
+            renderer.material.color = Color.red;
             agent.speed = chaseSpeed;
             if (!isDetecting)
             {
@@ -88,8 +73,7 @@ public class EnemyAI : MonoBehaviour
       } else
       {
          Wander();
-         animator.SetBool("Aware",false);
-         //renderer.material.color = Color.blue;
+         renderer.material.color = Color.blue;
          agent.speed = wanderingSpeed;
       }
       SearchForPlayer();
@@ -142,12 +126,10 @@ public class EnemyAI : MonoBehaviour
             {
                if (waitingTimeForWandering<=0f)
                {
-                  animator.SetBool("isStanding",false);
                   agent.SetDestination(waypoints[waypointIndex].position);
                }
                else
                {
-                  animator.SetBool("isStanding",true);
                   waitingTimeForWandering -= Time.deltaTime;
                }
             }
