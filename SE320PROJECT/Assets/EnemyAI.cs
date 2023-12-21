@@ -28,7 +28,7 @@ public class EnemyAI : MonoBehaviour
     
    public float wanderingSpeed = 1.4f;
    public float chaseSpeed = 2f;
-   public Renderer renderer;
+   private Renderer renderer;
 
    private void Start()
    {
@@ -45,7 +45,17 @@ public class EnemyAI : MonoBehaviour
          {
             if (waitingTimeForAttacking<=0f)
             {
-                  AttackPlayer();
+                  renderer.material.color = Color.blue;
+                  if (agent.tag =="Zombie")
+                  {
+                     AttackPlayerByZombie();
+                  }else if (agent.tag == "Agent")
+                  {
+                     AttackPlayerByAgent();
+                  }else if (agent.tag == "Wizard")
+                  {
+                     AttackPlayerByWizard();
+                  }
                   waitingTimeForAttacking = 1f;
             }
             else
@@ -73,7 +83,7 @@ public class EnemyAI : MonoBehaviour
       } else
       {
          Wander();
-         renderer.material.color = Color.blue;
+         renderer.material.color = Color.green;
          agent.speed = wanderingSpeed;
       }
       SearchForPlayer();
@@ -85,11 +95,17 @@ public class EnemyAI : MonoBehaviour
       return distance;
    }
 
-   public void AttackPlayer()
+   public void AttackPlayerByZombie()
    {
-      
+      fpsc.GetComponent<HeroHealth>().TakeDamage(10);
+   }
+   public void AttackPlayerByWizard()
+   {
+      fpsc.GetComponent<HeroHealth>().TakeDamage(30);
+   }
+   public void AttackPlayerByAgent()
+   {
       fpsc.GetComponent<HeroHealth>().TakeDamage(20);
-      
    }
 
    public void Wander()
