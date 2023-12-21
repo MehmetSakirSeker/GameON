@@ -5322,9 +5322,9 @@ GameObject:
   - component: {fileID: 442993673}
   - component: {fileID: 442993672}
   - component: {fileID: 442993674}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Agent
-  m_TagString: Untagged
+  m_TagString: Agent
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11714,8 +11714,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 958061488}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.6618654, z: -0, w: 0.74962276}
-  m_LocalPosition: {x: -10.73, y: 4.13, z: 49.32}
+  m_LocalRotation: {x: 0.09040034, y: -0.6800769, z: 0.085131645, w: 0.7225481}
+  m_LocalPosition: {x: 2.426988, y: 1.5747267, z: 16.727177}
   m_LocalScale: {x: 0.69854736, y: 0.69854736, z: 0.67487353}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -17591,6 +17591,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: pistol_001 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 199669651405181594, guid: 41236ddb97b001d499cadd3503c086dc,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 279119747375007141, guid: 41236ddb97b001d499cadd3503c086dc,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 560585288466575159, guid: 41236ddb97b001d499cadd3503c086dc,
         type: 3}
