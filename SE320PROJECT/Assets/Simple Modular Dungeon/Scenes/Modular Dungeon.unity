@@ -14498,33 +14498,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1142089063}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1143098886 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 199669651405181594, guid: 41236ddb97b001d499cadd3503c086dc,
-    type: 3}
-  m_PrefabInstance: {fileID: 1392880028}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1143098887 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 688644825341151264, guid: 41236ddb97b001d499cadd3503c086dc,
     type: 3}
   m_PrefabInstance: {fileID: 1392880028}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1143098891
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1143098886}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f691b5ce51b642aba96c5f3e56c05f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  FPCamera: {fileID: 1126556231}
-  range: 50
-  damage: 20
 --- !u!1001 &1163279172
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16748,12 +16727,12 @@ PrefabInstance:
     - target: {fileID: 8522696618944139269, guid: 41236ddb97b001d499cadd3503c086dc,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.b
-      value: 0.1745283
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8522696618944139269, guid: 41236ddb97b001d499cadd3503c086dc,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.g
-      value: 0.5804336
+      value: 0.4904762
       objectReference: {fileID: 0}
     - target: {fileID: 8522696618944139269, guid: 41236ddb97b001d499cadd3503c086dc,
         type: 3}
@@ -16761,13 +16740,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 7046889470412476038, guid: 41236ddb97b001d499cadd3503c086dc, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 199669651405181594, guid: 41236ddb97b001d499cadd3503c086dc,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1143098891}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 41236ddb97b001d499cadd3503c086dc, type: 3}
 --- !u!1001 &1400324574
 PrefabInstance:
@@ -17696,13 +17672,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 7046889470412476038, guid: 41236ddb97b001d499cadd3503c086dc, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 199669651405181594, guid: 41236ddb97b001d499cadd3503c086dc,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1476524562}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 41236ddb97b001d499cadd3503c086dc, type: 3}
 --- !u!4 &1476524560 stripped
 Transform:
@@ -17710,27 +17683,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1476524559}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1476524561 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 199669651405181594, guid: 41236ddb97b001d499cadd3503c086dc,
-    type: 3}
-  m_PrefabInstance: {fileID: 1476524559}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1476524562
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1476524561}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f691b5ce51b642aba96c5f3e56c05f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  FPCamera: {fileID: 0}
-  range: 100
-  damage: 50
 --- !u!1001 &1489504188
 PrefabInstance:
   m_ObjectHideFlags: 0
