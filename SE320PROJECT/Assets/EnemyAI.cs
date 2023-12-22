@@ -18,7 +18,7 @@ public class EnemyAI : MonoBehaviour
 
    public float timeToLosePlayer = 5f;
    public float loseTimer = 0f;
-   public float attackDistance = 5f;
+   public float attackDistance = 8f;
    
    public float fov = 120f;
    public float viewDistance = 10f;
@@ -29,6 +29,8 @@ public class EnemyAI : MonoBehaviour
    public float wanderingSpeed = 1.4f;
    public float chaseSpeed = 2f;
    private Renderer renderer;
+   
+   [SerializeField] ParticleSystem muzzleFlash;
 
    private void Start()
    {
@@ -43,6 +45,7 @@ public class EnemyAI : MonoBehaviour
       {
          if (DistanceToPlayer() <= attackDistance)
          {
+            LookPlayer();
             if (waitingTimeForAttacking<=0f)
             {
                   renderer.material.color = Color.blue;
@@ -56,7 +59,7 @@ public class EnemyAI : MonoBehaviour
                   {
                      AttackPlayerByWizard();
                   }
-                  waitingTimeForAttacking = 1f;
+                  waitingTimeForAttacking = 2.4f;
             }
             else
             {
@@ -89,6 +92,16 @@ public class EnemyAI : MonoBehaviour
       SearchForPlayer();
       
    }
+
+   private void LookPlayer()
+   {
+      Vector3 directionToPlayer = fpsc.transform.position - gameObject.transform.position;
+      directionToPlayer.y = 0f; // Ensure the enemy doesn't tilt up or down
+
+      // Rotate the enemy to face the player
+      Quaternion targetRotation = Quaternion.LookRotation(directionToPlayer);
+      transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 4*Time.deltaTime);
+   }
    public float DistanceToPlayer()
    {
       float distance = Vector3.Distance(transform.position, fpsc.transform.position);
@@ -105,7 +118,13 @@ public class EnemyAI : MonoBehaviour
    }
    public void AttackPlayerByAgent()
    {
-      fpsc.GetComponent<HeroHealth>().TakeDamage(20);
+      
+      if (IsPlayerInFrontOfGun())
+      {
+         muzzleFlash.Play();
+         fpsc.GetComponent<HeroHealth>().TakeDamage(20);
+      }
+      
    }
 
    public void Wander()
@@ -190,6 +209,13 @@ public class EnemyAI : MonoBehaviour
       }
       else
          isDetecting = false;
+   }
+
+   public bool IsPlayerInFrontOfGun()
+   {
+      Vector3 directionToTarget = transform.position - fpsc.transform.position;
+      float angel = Vector3.Angle(transform.forward, directionToTarget);
+      return angel >90 && angel<270;
    }
 
    public Vector3 RandomWanderPoint()
