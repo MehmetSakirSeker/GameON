@@ -41,18 +41,9 @@ public class Fireball : MonoBehaviour
         GameObject fireballProjectile = Instantiate(fireball, attackPoint.position, cam.rotation);
 
         Rigidbody fireballRB = fireballProjectile.GetComponent<Rigidbody>();
+        
 
-        Vector3 forceDirection = cam.transform.forward;
-
-        RaycastHit hit;
-
-        if (Physics.Raycast(cam.position, cam.forward, out hit, 150f))
-        {
-            forceDirection = (hit.point - attackPoint.position).normalized;
-
-        }
-
-        Vector3 forceToAdd = forceDirection * fireballForce;
+        Vector3 forceToAdd = cam.transform.forward * fireballForce;
         
         fireballRB.AddForce(forceToAdd, ForceMode.Impulse);
 
