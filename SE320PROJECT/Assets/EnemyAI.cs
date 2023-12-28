@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -28,6 +29,7 @@ public class EnemyAI : MonoBehaviour
     
    public float wanderingSpeed = 1.4f;
    public float chaseSpeed = 2f;
+   private bool isStunned = false;
    private Renderer renderer;
    
    [SerializeField] ParticleSystem muzzleFlash;
@@ -48,18 +50,20 @@ public class EnemyAI : MonoBehaviour
             LookPlayer();
             if (waitingTimeForAttacking<=0f)
             {
-                  renderer.material.color = Color.blue;
-                  if (agent.tag =="Zombie")
-                  {
-                     AttackPlayerByZombie();
-                  }else if (agent.tag == "Agent")
-                  {
-                     AttackPlayerByAgent();
-                  }else if (agent.tag == "Wizard")
-                  {
-                     AttackPlayerByWizard();
-                  }
-                  waitingTimeForAttacking = 2.4f;
+               if (!isStunned){
+                     renderer.material.color = Color.blue;
+                     if (agent.tag =="Zombie")
+                     {
+                        AttackPlayerByZombie();
+                     }else if (agent.tag == "Agent")
+                     {
+                        AttackPlayerByAgent();
+                     }else if (agent.tag == "Wizard")
+                     {
+                        AttackPlayerByWizard();
+                     }
+                     waitingTimeForAttacking = 2.4f;
+               }
             }
             else
             {
@@ -225,5 +229,22 @@ public class EnemyAI : MonoBehaviour
       NavMesh.SamplePosition(randomPoint, out navHit, wanderRadius, -1);
 
       return new Vector3(navHit.position.x, transform.position.y, navHit.position.z);
+   }
+
+   public IEnumerator Stun(float stunduration)
+   {
+      if (!isStunned)
+      {
+         Debug.Log("stun");
+         isStunned = true;
+         agent.isStopped = true;
+         Color oldColor = renderer.material.color;
+         renderer.material.color = Color.magenta;
+         yield return new WaitForSeconds(stunduration);
+         Debug.Log("end of the stun");
+         renderer.material.color = oldColor;
+         isStunned = false;
+         agent.isStopped = false;
+      }
    }
 }

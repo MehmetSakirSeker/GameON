@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311918, g: 0.3807396, b: 0.35872662, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -11655,6 +11655,7 @@ GameObject:
   - component: {fileID: 958061497}
   - component: {fileID: 958061498}
   - component: {fileID: 958061499}
+  - component: {fileID: 958061500}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -11977,6 +11978,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitPoints: 100000
+  score: 0
 --- !u!114 &958061499
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11996,6 +11998,25 @@ MonoBehaviour:
   fireballCooldown: 0.5
   fireballKey: 116
   fireballForce: 20
+--- !u!114 &958061500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 958061488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a71c7d7421db840ada0be170f1fccd11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 1126556232}
+  attackPoint: {fileID: 1599648203}
+  stunball: {fileID: 3632646441609313778, guid: 254d88ec57cab4110b5ca930cd7259f6,
+    type: 3}
+  stunballCooldown: 5
+  stunballKey: 121
+  stunballForce: 10
 --- !u!1001 &967889235
 PrefabInstance:
   m_ObjectHideFlags: 0
