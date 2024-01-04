@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using AFPC;
 
 /// <summary>
@@ -87,5 +88,5 @@ public class Hero : MonoBehaviour {
         movement.runningInputValue = Input.GetKey(KeyCode.LeftShift);
     }
 
-
+    
 }

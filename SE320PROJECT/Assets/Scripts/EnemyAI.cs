@@ -31,6 +31,8 @@ public class EnemyAI : MonoBehaviour
    public float chaseSpeed = 2f;
    private bool isStunned = false;
    private Renderer renderer;
+   public GameObject projectile;
+   public Transform attackPointForWizard;
    
    [SerializeField] ParticleSystem muzzleFlash;
 
@@ -118,7 +120,11 @@ public class EnemyAI : MonoBehaviour
    }
    public void AttackPlayerByWizard()
    {
-      fpsc.GetComponent<HeroHealth>().TakeDamage(30);
+      Vector3 hitPoint = attackPointForWizard.position;
+      Rigidbody rb = Instantiate(projectile, hitPoint, Quaternion.identity).GetComponent<Rigidbody>();
+      Vector3 shootPoint = fpsc.transform.position - transform.position;
+      rb.AddForce(shootPoint*2f,ForceMode.Impulse);
+      rb.AddForce(transform.up*2.5f,ForceMode.Impulse);
    }
    public void AttackPlayerByAgent()
    {

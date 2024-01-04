@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -21,5 +22,14 @@ public class HeroHealth : MonoBehaviour
     public float getHitPoints()
     {
         return hitPoints;
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.CompareTag("FireBall"))
+        {
+            TakeDamage(100);
+            Destroy(other.gameObject);
+        }
     }
 }

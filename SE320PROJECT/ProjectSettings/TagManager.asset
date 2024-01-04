@@ -8,6 +8,7 @@ TagManager:
   - Zombie
   - Agent
   - Wizard
+  - FireBall
   layers:
   - Default
   - TransparentFX
