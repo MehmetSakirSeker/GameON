@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEditor.Search;
 using UnityEngine;
 
-public class Weapon : MonoBehaviour
+public class AgentWeapon : MonoBehaviour
 {
     [SerializeField] Camera FPCamera;
     [SerializeField] float range = 100f;
