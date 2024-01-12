@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using AFPC;
 
 /// <summary>
@@ -7,25 +6,23 @@ using AFPC;
 /// </summary>
 public class Hero : MonoBehaviour {
 
+    /* UI Reference */
+    public HUD HUD;
+
+    /* Lifecycle class. Damage, Heal, Death, Respawn... */
+
     /* Movement class. Move, Jump, Run... */
-    [SerializeField] Movement movement;
+    public Movement movement;
 
     /* Overview class. Look, Aim, Shake... */
-    [SerializeField] Overview overview;
+    public Overview overview;
 
-    public int isRunning()
-    {
-        if (Input.GetKey(KeyCode.LeftShift))
-        {
-            return 0;
-        }
-        else
-        {
-            return 1;
+    /* Optional assign the HUD */
+    private void Awake () {
+        if (HUD) {
+            HUD.hero = this;
         }
     }
-
- 
 
     /* Some classes need to initizlize */
     private void Start () {
@@ -33,6 +30,8 @@ public class Hero : MonoBehaviour {
         /* a few apllication settings for more smooth. This is Optional. */
         QualitySettings.vSyncCount = 0;
         Cursor.lockState = CursorLockMode.Locked;
+
+        /* Initialize lifecycle and add Damage FX */
 
         /* Initialize movement and add camera shake when landing */
         movement.Initialize();
@@ -43,6 +42,8 @@ public class Hero : MonoBehaviour {
 
         /* Read player input before check availability */
         ReadInput();
+
+        /* Block controller when unavailable */
 
         /* Mouse look state */
         overview.Looking();
@@ -55,25 +56,26 @@ public class Hero : MonoBehaviour {
 
         /* Control the speed */
         movement.Running();
-        
-        
+
+        /* Control the jumping, ground search... */
+        movement.Jumping();
+
+        /* Control the health and shield recovery */
     }
 
     private void FixedUpdate () {
+
+        /* Block controller when unavailable */
 
         /* Physical movement */
         movement.Accelerate();
 
         /* Physical rotation with camera */
         overview.RotateRigigbodyToLookDirection (movement.rb);
-        
-        /* Control the jumping, ground search... */
-        movement.Jumping();
     }
 
     private void LateUpdate () {
         
-        /* Camera following */
         overview.Follow (transform.position);
     }
 
@@ -87,6 +89,4 @@ public class Hero : MonoBehaviour {
         movement.jumpingInputValue = Input.GetButtonDown("Jump");
         movement.runningInputValue = Input.GetKey(KeyCode.LeftShift);
     }
-
-    
 }

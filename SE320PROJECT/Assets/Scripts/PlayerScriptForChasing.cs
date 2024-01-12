@@ -25,11 +25,6 @@ public class PlayerScriptForChasing : MonoBehaviour
         {
             Fire();
         }
-
-        if (player.isRunning() == 0)
-        {
-            collider.radius = sprintEnemyPerceptionRadius;
-        }
         else
         {
             collider.radius = walkEnemyPerceptionRadius;

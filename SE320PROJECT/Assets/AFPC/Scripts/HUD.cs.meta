@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f7ecd681b26b44dc6a0fd8a7479a13e5
+guid: 3852e0323ac5345ba8d794038643b4bd
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
@@ -14,5 +14,5 @@ AssetOrigin:
   productId: 167675
   packageName: Advanced First-Person Controller
   packageVersion: 1.0
-  assetPath: Assets/Scripts/Hero.cs
+  assetPath: Assets/AFPC/Scripts/HUD.cs
   uploadId: 483528
