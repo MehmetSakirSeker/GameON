@@ -8,17 +8,11 @@ public class EnemySpawner : MonoBehaviour
 
     [SerializeField]
     private GameObject enemyAI;
+    public bool isSpawned = false;
     
-    // Start is called before the first frame update
-    void Start()
+    public void SpawnEnemy()
     {
         GameObject newEnemy = Instantiate(enemyAI, transform);
         newEnemy.GetComponent<EnemyAI>().fpsc = GameObject.Find("Player").GetComponent<Hero>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

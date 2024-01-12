@@ -1035,6 +1035,7 @@ GameObject:
   - component: {fileID: 352792412}
   - component: {fileID: 352792411}
   - component: {fileID: 352792410}
+  - component: {fileID: 352792413}
   m_Layer: 0
   m_Name: Trigger3
   m_TagString: Untagged
@@ -1128,6 +1129,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 352792408}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &352792413
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 352792408}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.0000002, y: 1, z: 1.0000002}
+  m_Center: {x: 0, y: -0.00000047683716, z: -0.0000009536743}
 --- !u!1 &368019969
 GameObject:
   m_ObjectHideFlags: 0
@@ -2044,6 +2066,7 @@ GameObject:
   - component: {fileID: 997510728}
   - component: {fileID: 997510727}
   - component: {fileID: 997510726}
+  - component: {fileID: 997510729}
   m_Layer: 0
   m_Name: Trigger1
   m_TagString: Untagged
@@ -2137,6 +2160,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 997510724}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &997510729
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 997510724}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: -0.00000047683716, z: 0}
 --- !u!1 &1005274941
 GameObject:
   m_ObjectHideFlags: 0
@@ -4292,6 +4336,7 @@ GameObject:
   - component: {fileID: 1828693293}
   - component: {fileID: 1828693292}
   - component: {fileID: 1828693291}
+  - component: {fileID: 1828693294}
   m_Layer: 0
   m_Name: Trigger
   m_TagString: Untagged
@@ -4385,6 +4430,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1828693289}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &1828693294
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1828693289}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.99999994, y: 1, z: 1}
+  m_Center: {x: -0.00000047683716, y: -0.00000047683716, z: 0}
 --- !u!1 &1844237270
 GameObject:
   m_ObjectHideFlags: 0
@@ -4807,6 +4873,7 @@ GameObject:
   - component: {fileID: 1957974126}
   - component: {fileID: 1957974125}
   - component: {fileID: 1957974124}
+  - component: {fileID: 1957974127}
   m_Layer: 0
   m_Name: Trigger2
   m_TagString: Untagged
@@ -4900,6 +4967,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1957974122}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &1957974127
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1957974122}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.0000002, y: 1, z: 1.0000002}
+  m_Center: {x: 0, y: -0.00000047683716, z: 0}
 --- !u!1 &1968819908
 GameObject:
   m_ObjectHideFlags: 0
