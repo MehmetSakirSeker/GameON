@@ -64,6 +64,7 @@ public class EnemyAI : MonoBehaviour
                      {
                         AttackPlayerByWizard();
                      }
+                     
                      waitingTimeForAttacking = 2.4f;
                }
             }
