@@ -10,10 +10,13 @@ public class Weapon : MonoBehaviour
 
     [SerializeField] private Transform muzzle; 
     private float timeSinceLastShot;
+    private UIManager uiManager; 
+
     private void Start()
     {
         PlayerShoot.shootInput += Shoot;
         PlayerShoot.reloadInput += StartReload;
+        uiManager = GameObject.Find("AmmoCanvas").GetComponent<UIManager>();
     }
 
     public void StartReload()
@@ -29,6 +32,7 @@ public class Weapon : MonoBehaviour
         weaponMethods.reloading = true;
         yield return new WaitForSeconds(weaponMethods.reloadTime);
         weaponMethods.currentAmmo = weaponMethods.magSize;
+        uiManager.UpdateAmmo(weaponMethods.currentAmmo);
         weaponMethods.reloading = false;
     }
     private bool CanShoot()=> !weaponMethods.reloading && timeSinceLastShot>1f/(weaponMethods.fireRate/60f);
@@ -43,7 +47,7 @@ public class Weapon : MonoBehaviour
                     EnemyTakeDamage giveDamage = hitInfo.transform.GetComponent<EnemyTakeDamage>();
                     giveDamage?.TakeDamage(weaponMethods.damage);
                 }
-
+                uiManager.UpdateAmmo(weaponMethods.currentAmmo);
                 weaponMethods.currentAmmo--;
                 timeSinceLastShot = 0;
                 OnWeaponShot();
@@ -55,10 +59,10 @@ public class Weapon : MonoBehaviour
     {
         timeSinceLastShot += Time.deltaTime;
     }
-    
+
     private void OnWeaponShot()
     {
-        
+
     }
-     
+
 }
