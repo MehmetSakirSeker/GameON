@@ -82,7 +82,6 @@ public class EnemyAI : MonoBehaviour
          else
          {
             agent.SetDestination(fpsc.transform.position);
-            Debug.Log("movedd");
             renderer.material.color = Color.red;
             agent.speed = chaseSpeed;
             if (!isDetecting)

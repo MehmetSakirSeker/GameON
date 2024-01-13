@@ -503,7 +503,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27f784608a244a043bd83e31194aaa68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fpsc: {fileID: 0}
+  fpsc: {fileID: 6060921890129711220, guid: 394dd090b822b4076854df902899bd54, type: 3}
   wanderType: 1
   waypoints:
   - {fileID: 0}

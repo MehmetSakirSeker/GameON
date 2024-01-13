@@ -2,11 +2,42 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HeroHealth : MonoBehaviour
 {
     [SerializeField] float hitPoints = 100000f;
     public float score = 0f;
+    public Slider slider;
+    public GameObject healthUI;
+    private float maxHealth = 100000f;
+    
+    private void Start()
+    {
+        maxHealth = hitPoints;
+        slider.value = CalculateHealth();
+    }
+
+    private void Update()
+    {
+        slider.value = CalculateHealth();
+
+        if (hitPoints<maxHealth)
+        {
+            healthUI.SetActive(true);
+        }
+
+        if (hitPoints<=0)
+        {
+            Destroy(gameObject);
+        }
+        
+    }
+
+    float CalculateHealth()
+    {
+        return hitPoints / maxHealth;
+    }
     
     public void TakeDamage(float damage)
     {
