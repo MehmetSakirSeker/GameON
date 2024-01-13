@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7443577181140168031}
   - component: {fileID: 4688438345730808267}
   - component: {fileID: 4964738843093892282}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Wizard hat element (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117,7 +117,7 @@ GameObject:
   - component: {fileID: 4166137710236678588}
   - component: {fileID: 4341134474904519283}
   - component: {fileID: 5459406714439449702}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Wizard hat element (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -219,7 +219,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 813839003625129915}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: AttackPointForWizard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -253,7 +253,7 @@ GameObject:
   - component: {fileID: 6816789846210083753}
   - component: {fileID: 4933132228438330426}
   - component: {fileID: 8420810617969348005}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Wizard hat element (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -358,7 +358,7 @@ GameObject:
   - component: {fileID: 1399268667589075517}
   - component: {fileID: 5061466723980031494}
   - component: {fileID: 7453580995590573173}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: WizardNose
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -463,7 +463,7 @@ GameObject:
   - component: {fileID: 5065845407868537135}
   - component: {fileID: 2939643255361692890}
   - component: {fileID: 8009742223849044966}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Wizard hat element
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -571,7 +571,7 @@ GameObject:
   - component: {fileID: 77516298404671228}
   - component: {fileID: 4499525977212239118}
   - component: {fileID: 8344231847607024492}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: Wizard
   m_TagString: Wizard
   m_Icon: {fileID: 0}
@@ -690,7 +690,7 @@ MonoBehaviour:
   waypointIndex: 0
   waitingTimeForWandering: 3
   waitingTimeForAttacking: 3
-  timeToLosePlayer: 5
+  timeToLosePlayer: 7
   loseTimer: 0
   attackDistance: 14
   fov: 120
@@ -700,8 +700,7 @@ MonoBehaviour:
   chaseSpeed: 2
   projectile: {fileID: 7190349584560389105, guid: becb438c7bac3e5488f013f8084e1245,
     type: 3}
-  attackPointForWizard: {fileID: 2020535359747136161, guid: 394dd090b822b4076854df902899bd54,
-    type: 3}
+  attackPointForWizard: {fileID: 813839003625129915}
   muzzleFlash: {fileID: 0}
 --- !u!114 &4499525977212239118
 MonoBehaviour:

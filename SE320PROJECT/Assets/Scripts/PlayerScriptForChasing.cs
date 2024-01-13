@@ -45,7 +45,7 @@ public class PlayerScriptForChasing : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Zombie"))
+        if (other.gameObject.layer ==3)
         {
             other.GetComponent<EnemyAI>().OnAware();
         }

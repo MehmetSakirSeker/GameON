@@ -47,6 +47,11 @@ public class EnemyAI : MonoBehaviour
    {
       if (isAware)
       {
+         if (agent.tag =="Zombie")
+         {
+            wanderType = WanderType.Random;
+         }
+         
          if (DistanceToPlayer() <= attackDistance)
          {
             LookPlayer();
@@ -67,6 +72,7 @@ public class EnemyAI : MonoBehaviour
                      
                      waitingTimeForAttacking = 2.4f;
                }
+               
             }
             else
             {
@@ -76,6 +82,7 @@ public class EnemyAI : MonoBehaviour
          else
          {
             agent.SetDestination(fpsc.transform.position);
+            Debug.Log("movedd");
             renderer.material.color = Color.red;
             agent.speed = chaseSpeed;
             if (!isDetecting)
@@ -92,9 +99,10 @@ public class EnemyAI : MonoBehaviour
 
       } else
       {
+         agent.speed = wanderingSpeed;
          Wander();
          renderer.material.color = Color.green;
-         agent.speed = wanderingSpeed;
+         
       }
       SearchForPlayer();
       
@@ -118,6 +126,7 @@ public class EnemyAI : MonoBehaviour
    public void AttackPlayerByZombie()
    {
       fpsc.GetComponent<HeroHealth>().TakeDamage(10);
+      
    }
    public void AttackPlayerByWizard()
    {
@@ -193,6 +202,7 @@ public class EnemyAI : MonoBehaviour
       isAware = true;
       isDetecting = true;
       loseTimer = 0;
+      
    }
 
    public void SearchForPlayer()

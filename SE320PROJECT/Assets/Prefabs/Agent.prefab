@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1502016500436259826}
   - component: {fileID: 2428430019373100771}
   - component: {fileID: 3444556519452744495}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: Agent
   m_TagString: Agent
   m_Icon: {fileID: 0}
@@ -151,9 +151,9 @@ MonoBehaviour:
   waypointIndex: 0
   waitingTimeForWandering: 3
   waitingTimeForAttacking: 2.4
-  timeToLosePlayer: 5
+  timeToLosePlayer: 7
   loseTimer: 0
-  attackDistance: 8
+  attackDistance: 10
   fov: 120
   viewDistance: 10
   wanderRadius: 6
@@ -190,6 +190,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MuzzleFlash
+      objectReference: {fileID: 0}
+    - target: {fileID: 2594514244985427835, guid: 3904b231780074b21ab9c7011033282f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3714545269371226616, guid: 3904b231780074b21ab9c7011033282f,
         type: 3}
@@ -326,10 +331,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3745853452057941777, guid: f7a69565ab2ff984789da792b0969f4b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4205521026231025682, guid: f7a69565ab2ff984789da792b0969f4b,
         type: 3}
       propertyPath: m_Name
       value: shotgun_001
+      objectReference: {fileID: 0}
+    - target: {fileID: 4205521026231025682, guid: f7a69565ab2ff984789da792b0969f4b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

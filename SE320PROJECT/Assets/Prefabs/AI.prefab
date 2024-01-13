@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 9052937979327669539}
   - component: {fileID: 8980404783871084010}
   - component: {fileID: 8642375311199129517}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -120,7 +120,7 @@ GameObject:
   - component: {fileID: 8717749801708066459}
   - component: {fileID: 8077629007116292331}
   - component: {fileID: 5299276165820429948}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: AI
   m_TagString: Zombie
   m_Icon: {fileID: 0}
@@ -251,17 +251,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fpsc: {fileID: 6060921890129711220, guid: 394dd090b822b4076854df902899bd54, type: 3}
-  wanderType: 1
-  waypoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  wanderType: 0
+  waypoints: []
   waypointIndex: 0
   waitingTimeForWandering: 1.5
   waitingTimeForAttacking: 1
-  timeToLosePlayer: 2
+  timeToLosePlayer: 7
   loseTimer: 0
-  attackDistance: 2
+  attackDistance: 3
   fov: 120
   viewDistance: 10
   wanderRadius: 6
