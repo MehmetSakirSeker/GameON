@@ -12,7 +12,9 @@ public class EnemySpawner : MonoBehaviour
     
     public void SpawnEnemy()
     {
-        GameObject newEnemy = Instantiate(enemyAI, transform);
+        GameObject newEnemy = Instantiate(enemyAI, transform.position, Quaternion.identity);
         newEnemy.GetComponent<EnemyAI>().fpsc = GameObject.Find("Player").GetComponent<Hero>();
+        isSpawned = true;
+        gameObject.tag = "Untagged";
     }
 }

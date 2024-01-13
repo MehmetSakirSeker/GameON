@@ -734,12 +734,12 @@ PlayerSettings:
   hmiLogStartupTiming: 0
   hmiCpuConfiguration: 
   apiCompatibilityLevel: 6
-  activeInputHandler: 0
+  activeInputHandler: 2
   windowsGamepadBackendHint: 0
   cloudProjectId: e8fc2a6f-13c0-4fc9-bc60-158bc0bc14a8
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: 
+  projectName: SE320PROJECT 2023-12-09_14-57-46
   organizationId: codevader
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311918, g: 0.3807396, b: 0.35872662, a: 1}
+  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.35872698, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -19979,12 +19979,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 919d8c558bbd34841bf98d345329ef88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 0}
-  attackPoint: {fileID: 0}
-  fireball: {fileID: 0}
+  cam: {fileID: 1173401031}
+  attackPoint: {fileID: 1262395485}
+  fireball: {fileID: 2431518318436363539, guid: 04e71a80df79b4412bab0c8542c2c25b,
+    type: 3}
   fireballCooldown: 0
   fireballKey: 116
-  fireballForce: 0
+  fireballForce: 30
 --- !u!135 &1427580835
 SphereCollider:
   m_ObjectHideFlags: 0

@@ -38,12 +38,12 @@ public class Fireball : MonoBehaviour
     {
         readyToCast = false;
 
-        GameObject fireballProjectile = Instantiate(fireball, attackPoint.position, cam.rotation);
+        GameObject fireballProjectile = Instantiate(fireball, attackPoint.position + new Vector3(0,0.5f,0), cam.rotation);
 
         Rigidbody fireballRB = fireballProjectile.GetComponent<Rigidbody>();
         
 
-        Vector3 forceToAdd = cam.transform.forward * fireballForce;
+        Vector3 forceToAdd = attackPoint.transform.forward * fireballForce;
         
         fireballRB.AddForce(forceToAdd, ForceMode.Impulse);
 

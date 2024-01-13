@@ -3,7 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Wizard
+  - FireBall
+  - Zombie
+  - Agent
+  - SpawnPoint
   layers:
   - Default
   - TransparentFX
