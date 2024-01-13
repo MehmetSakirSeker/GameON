@@ -9,11 +9,12 @@ TagManager:
   - Zombie
   - Agent
   - SpawnPoint
+  - CinemachineTarget
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Zombie
   - Water
   - UI
   - 

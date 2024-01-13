@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Magnum
   m_EditorClassIdentifier: 
   name: Magnum
-  damage: 50
+  damage: 10
   range: 100
-  currentAmmo: 25
-  magSize: 25
+  currentAmmo: 32
+  magSize: 50
   fireRate: 600
   reloadTime: 1.5
   reloading: 0

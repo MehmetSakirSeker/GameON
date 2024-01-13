@@ -684,7 +684,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27f784608a244a043bd83e31194aaa68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fpsc: {fileID: 5386290532568702224, guid: 0b339ed01834395418660ccaf5b9d52f, type: 3}
+  fpsc: {fileID: 6060921890129711220, guid: 394dd090b822b4076854df902899bd54, type: 3}
   wanderType: 0
   waypoints: []
   waypointIndex: 0
@@ -700,7 +700,8 @@ MonoBehaviour:
   chaseSpeed: 2
   projectile: {fileID: 7190349584560389105, guid: becb438c7bac3e5488f013f8084e1245,
     type: 3}
-  attackPointForWizard: {fileID: 813839003625129915}
+  attackPointForWizard: {fileID: 2020535359747136161, guid: 394dd090b822b4076854df902899bd54,
+    type: 3}
   muzzleFlash: {fileID: 0}
 --- !u!114 &4499525977212239118
 MonoBehaviour:
