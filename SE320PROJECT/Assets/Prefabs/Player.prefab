@@ -129,6 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7ecd681b26b44dc6a0fd8a7479a13e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HUD: {fileID: 0}
   movement:
     isDebugLog: 0
     movementInputValues: {x: 2, y: 2, z: 1}
@@ -210,7 +211,7 @@ MonoBehaviour:
   soundIntensity: 20
   zombieLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 0
   walkEnemyPerceptionRadius: 1.5
   sprintEnemyPerceptionRadius: 2
 --- !u!82 &8267301196517090846
@@ -363,6 +364,8 @@ MonoBehaviour:
   fireballCooldown: 0.5
   fireballKey: 116
   fireballForce: 20
+  fireballDamage: 5
+  burnDamage: 3
 --- !u!114 &3947994161680195495
 MonoBehaviour:
   m_ObjectHideFlags: 0

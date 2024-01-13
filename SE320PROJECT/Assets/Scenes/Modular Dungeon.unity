@@ -19961,12 +19961,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a71c7d7421db840ada0be170f1fccd11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 0}
-  attackPoint: {fileID: 0}
-  stunball: {fileID: 0}
-  stunballCooldown: 0
+  cam: {fileID: 1173401031}
+  attackPoint: {fileID: 1262395485}
+  stunball: {fileID: 3632646441609313778, guid: 254d88ec57cab4110b5ca930cd7259f6,
+    type: 3}
+  stunballCooldown: 5
   stunballKey: 121
-  stunballForce: 0
+  stunballForce: 10
 --- !u!114 &1427580834
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19983,9 +19984,11 @@ MonoBehaviour:
   attackPoint: {fileID: 1262395485}
   fireball: {fileID: 2431518318436363539, guid: 04e71a80df79b4412bab0c8542c2c25b,
     type: 3}
-  fireballCooldown: 0
+  fireballCooldown: 0.5
   fireballKey: 116
-  fireballForce: 30
+  fireballForce: 20
+  fireballDamage: 3
+  burnDamage: 20
 --- !u!135 &1427580835
 SphereCollider:
   m_ObjectHideFlags: 0

@@ -6120,37 +6120,37 @@ PrefabInstance:
     - target: {fileID: 2478075442957522727, guid: 0b339ed01834395418660ccaf5b9d52f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.71
+      value: 28.844
       objectReference: {fileID: 0}
     - target: {fileID: 2478075442957522727, guid: 0b339ed01834395418660ccaf5b9d52f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.695
+      value: 1.316
       objectReference: {fileID: 0}
     - target: {fileID: 2478075442957522727, guid: 0b339ed01834395418660ccaf5b9d52f,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2110.278
+      value: -2132.03
       objectReference: {fileID: 0}
     - target: {fileID: 2478075442957522727, guid: 0b339ed01834395418660ccaf5b9d52f,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.63871634
+      value: 0.99920964
       objectReference: {fileID: 0}
     - target: {fileID: 2478075442957522727, guid: 0b339ed01834395418660ccaf5b9d52f,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.009217272
+      value: 0.013795013
       objectReference: {fileID: 0}
     - target: {fileID: 2478075442957522727, guid: 0b339ed01834395418660ccaf5b9d52f,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.76931024
+      value: -0.037275225
       objectReference: {fileID: 0}
     - target: {fileID: 2478075442957522727, guid: 0b339ed01834395418660ccaf5b9d52f,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.010875493
+      value: 0.00065044407
       objectReference: {fileID: 0}
     - target: {fileID: 2478075442957522727, guid: 0b339ed01834395418660ccaf5b9d52f,
         type: 3}
@@ -6171,6 +6171,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3440827031496743560, guid: 0b339ed01834395418660ccaf5b9d52f,
+        type: 3}
+      propertyPath: burnDamage
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 3440827031496743560, guid: 0b339ed01834395418660ccaf5b9d52f,
+        type: 3}
+      propertyPath: fireballDamage
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3947994161680195495, guid: 0b339ed01834395418660ccaf5b9d52f,
         type: 3}

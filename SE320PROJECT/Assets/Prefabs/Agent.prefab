@@ -175,6 +175,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitPoints: 200
+  burnEffectPrefab: {fileID: 4879001337354835892, guid: 43951592abb0c864090b5b70036f0647,
+    type: 3}
 --- !u!1001 &4318739456022865009
 PrefabInstance:
   m_ObjectHideFlags: 0

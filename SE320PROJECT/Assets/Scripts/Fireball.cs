@@ -20,6 +20,10 @@ public class Fireball : MonoBehaviour
 
     private bool readyToCast;
 
+    [Header("Damage")] 
+    public float fireballDamage;
+    public float burnDamage;
+
 
     private void Start()
     {

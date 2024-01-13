@@ -37,7 +37,7 @@ public class StunBall : MonoBehaviour
     {
         readyToCast = false;
 
-        GameObject stunballProjectile = Instantiate(stunball, attackPoint.position, cam.rotation);
+        GameObject stunballProjectile = Instantiate(stunball,attackPoint.position + new Vector3(0,0.5f,0), cam.rotation);
 
         Rigidbody stunballRB = stunballProjectile.GetComponent<Rigidbody>();
         
