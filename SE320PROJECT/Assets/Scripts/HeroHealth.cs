@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class HeroHealth : MonoBehaviour
@@ -26,11 +27,7 @@ public class HeroHealth : MonoBehaviour
         {
             healthUI.SetActive(true);
         }
-
-        if (hitPoints<=0)
-        {
-            Destroy(gameObject);
-        }
+        
         
     }
 
@@ -45,7 +42,7 @@ public class HeroHealth : MonoBehaviour
         Debug.Log("Player health = "+hitPoints);
         if (hitPoints <= 0)
         {
-            Destroy(gameObject);
+            SceneManager.LoadSceneAsync(3);
             return;
         }
     }

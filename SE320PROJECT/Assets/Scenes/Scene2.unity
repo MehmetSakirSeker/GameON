@@ -7845,6 +7845,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: AI
       objectReference: {fileID: 0}
+    - target: {fileID: 4927583402075881367, guid: 7a0ed12f328339241b69eeb66577d02b,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4927583402075881367, guid: 7a0ed12f328339241b69eeb66577d02b,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8077629007116292331, guid: 7a0ed12f328339241b69eeb66577d02b,
         type: 3}
       propertyPath: wanderType
@@ -8209,7 +8219,7 @@ PrefabInstance:
     - target: {fileID: 2357349891871782008, guid: 394dd090b822b4076854df902899bd54,
         type: 3}
       propertyPath: hitPoints
-      value: 500
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6060921890129711220, guid: 394dd090b822b4076854df902899bd54,
         type: 3}
