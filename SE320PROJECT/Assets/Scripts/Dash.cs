@@ -11,7 +11,6 @@ public class Dash : MonoBehaviour
     
     private bool dashing = true;
     private float dashingPower = 30f;
-    private float dashingTime = 0.3f;
     private float dashingCooldown = 0.7f;
 
     private void Start()

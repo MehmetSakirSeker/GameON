@@ -47,6 +47,7 @@ public class Weapon : MonoBehaviour
                     EnemyTakeDamage giveDamage = hitInfo.transform.GetComponent<EnemyTakeDamage>();
                     giveDamage?.TakeDamage(weaponMethods.damage);
                 }
+                Debug.Log("weapon");
                 uiManager.UpdateAmmo(weaponMethods.currentAmmo);
                 weaponMethods.currentAmmo--;
                 timeSinceLastShot = 0;

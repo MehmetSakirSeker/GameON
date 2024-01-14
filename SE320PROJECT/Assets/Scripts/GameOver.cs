@@ -12,7 +12,7 @@ public class GameOver : MonoBehaviour
    {
       Cursor.lockState = CursorLockMode.Locked;
       Cursor.visible = false;
-      SceneManager.LoadSceneAsync(1);
+      SceneManager.LoadSceneAsync(1, LoadSceneMode.Single);
    }
    
    public void QuitGame()

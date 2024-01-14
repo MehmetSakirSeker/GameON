@@ -43,10 +43,11 @@ public class HeroHealth : MonoBehaviour
         {
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
-            SceneManager.LoadSceneAsync(3);
+            SceneManager.LoadSceneAsync(3, LoadSceneMode.Single);
         }
     }
     
+
     public float getHitPoints()
     {
         return hitPoints;

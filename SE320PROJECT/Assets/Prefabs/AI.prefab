@@ -504,7 +504,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fpsc: {fileID: 6060921890129711220, guid: 394dd090b822b4076854df902899bd54, type: 3}
-  wanderType: 1
+  wanderType: 0
   waypoints:
   - {fileID: 0}
   - {fileID: 0}

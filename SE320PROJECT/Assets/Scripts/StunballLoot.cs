@@ -14,7 +14,7 @@ public class StunballLoot : MonoBehaviour
 
     private IEnumerator loadDungeon()
     {
-        SceneManager.LoadScene("Scenes/Modular Dungeon");
+        SceneManager.LoadSceneAsync(2, LoadSceneMode.Single);
         yield return null;
     }
 }
