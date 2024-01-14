@@ -8,7 +8,6 @@ using UnityEngine.UI;
 public class HeroHealth : MonoBehaviour
 {
     [SerializeField] float hitPoints = 100000f;
-    public float score = 0f;
     public Slider slider;
     public GameObject healthUI;
     private float maxHealth = 100000f;
@@ -42,11 +41,12 @@ public class HeroHealth : MonoBehaviour
         Debug.Log("Player health = "+hitPoints);
         if (hitPoints <= 0)
         {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
             SceneManager.LoadSceneAsync(3);
-            return;
         }
     }
-
+    
     public float getHitPoints()
     {
         return hitPoints;

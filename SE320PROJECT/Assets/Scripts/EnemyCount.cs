@@ -22,22 +22,40 @@ public class EnemyCount : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        spawnPointCount = GameObject.FindGameObjectsWithTag("SpawnPoint").Length;
+
+        if (SceneManager.GetActiveScene().name == "Scene2")
+        { 
+            spawnPointCount = GameObject.FindGameObjectsWithTag("SpawnPoint").Length;
         
-        enemyCount = GameObject.FindGameObjectsWithTag("Agent").Length + GameObject.FindGameObjectsWithTag("Zombie").Length + GameObject.FindGameObjectsWithTag("Wizard").Length;
+            enemyCount = GameObject.FindGameObjectsWithTag("Agent").Length + GameObject.FindGameObjectsWithTag("Zombie").Length + GameObject.FindGameObjectsWithTag("Wizard").Length;
         
-        if (spawnPointCount <= 0 && enemyCount <= 0)
-        {
-            if (fireballPicked == false)
+            if (spawnPointCount <= 0 && enemyCount <= 0)
             {
-                fireballLoot.SetActive(true);
-            }
-            else
-            {
-                stunballLoot.SetActive(true);
-                enabled = false;
-            }
+                if (fireballPicked == false)
+                {
+                    fireballLoot.SetActive(true);
+                }
+                else
+                {
+                    stunballLoot.SetActive(true);
+                }
+            }  
         }
+        
+        
+        if (SceneManager.GetActiveScene().name == "Modular Dungeon")
+        { 
+            enemyCount = GameObject.FindGameObjectsWithTag("Wizard").Length;
+        
+            if (enemyCount <= 0)
+            {
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+                SceneManager.LoadSceneAsync(3);
+            }  
+        }
+        
+        
 
     }
 }

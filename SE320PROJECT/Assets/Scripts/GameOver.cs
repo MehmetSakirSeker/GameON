@@ -2,17 +2,17 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameOver : MonoBehaviour
 {
    [SerializeField] private Canvas gameOverCanvas;
 
-   public void AfterDeath()
+   public void TryAgain()
    {
-      gameOverCanvas.enabled = true;
-      Time.timeScale = 0;
-      Cursor.lockState = CursorLockMode.None;
-      Cursor.visible = true;
+      Cursor.lockState = CursorLockMode.Locked;
+      Cursor.visible = false;
+      SceneManager.LoadSceneAsync(1);
    }
    
    public void QuitGame()

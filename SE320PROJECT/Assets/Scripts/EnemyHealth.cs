@@ -29,11 +29,6 @@ public class EnemyHealth : MonoBehaviour, EnemyTakeDamage
         {
             healthUI.SetActive(true);
         }
-
-        if (hitPoints<=0)
-        {
-            Destroy(gameObject);
-        }
         
     }
 
@@ -50,6 +45,7 @@ public class EnemyHealth : MonoBehaviour, EnemyTakeDamage
         Debug.Log(hitPoints);
         if (hitPoints <= 0)
         {
+            ScoreScript.score += 10;
             Destroy(gameObject);
         }
     }
