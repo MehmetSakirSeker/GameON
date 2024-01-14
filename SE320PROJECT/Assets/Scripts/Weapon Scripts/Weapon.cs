@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Weapon : MonoBehaviour
@@ -16,6 +17,7 @@ public class Weapon : MonoBehaviour
         PlayerShoot.shootInput += Shoot;
         PlayerShoot.reloadInput += StartReload;
         uiManager = GameObject.Find("AmmoCanvas").GetComponent<UIManager>();
+        //uiManager.UpdateAmmo(weaponMethods.currentAmmo);
     }
 
     public void StartReload()
@@ -51,12 +53,12 @@ public class Weapon : MonoBehaviour
             {
                 if (CanShoot())
                 {
+                    muzzle.gameObject.GetComponent<ParticleSystem>().Play();
                     if (Physics.Raycast(muzzle.position, transform.forward, out RaycastHit hitInfo, weaponMethods.range))
                     {
                         EnemyTakeDamage giveDamage = hitInfo.transform.GetComponent<EnemyTakeDamage>();
                         giveDamage?.TakeDamage(weaponMethods.damage);
                     }
-                    Debug.Log("weapon");
                     uiManager.UpdateAmmo(weaponMethods.currentAmmo);
                     weaponMethods.currentAmmo--;
                     timeSinceLastShot = 0;

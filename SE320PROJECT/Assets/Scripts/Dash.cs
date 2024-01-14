@@ -32,6 +32,8 @@ public class Dash : MonoBehaviour
         dashing = false;
 
         velocity = new Vector3(transform.forward.x * dashingPower, 0f, transform.forward.z * dashingPower);
+
+        rb.velocity = Vector3.zero;
         
         rb.AddForce(transform.forward + velocity, ForceMode.VelocityChange);
         

@@ -38,8 +38,7 @@ public class PlayerScriptForChasing : MonoBehaviour
         Debug.Log("Number of enemies detected: " + enemies.Length);
         for (int i = 0; i < enemies.Length; i++)
         {
-            Debug.Log(enemies[i].name);
-            enemies[i].GetComponent<EnemyAI>().OnAware();
+            enemies[i].GetComponent<EnemyAI>()?.OnAware();
         }
     }
 

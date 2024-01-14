@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.35872698, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2211,19 +2211,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1973894341}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &377307169
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 377307168}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6b643e492b52e94cb53ac9140000ab9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  velocity: {x: 0, y: 0, z: 0}
 --- !u!1001 &381632143
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8491,6 +8478,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2164943490598187311, guid: 394dd090b822b4076854df902899bd54,
+        type: 3}
+      propertyPath: fireballCooldown
+      value: 0.8
+      objectReference: {fileID: 0}
     - target: {fileID: 2357349891871782008, guid: 394dd090b822b4076854df902899bd54,
         type: 3}
       propertyPath: slider
@@ -8536,14 +8528,15 @@ PrefabInstance:
       propertyPath: stunballLoot
       value: 
       objectReference: {fileID: 2068704763}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8960919805335479689, guid: 394dd090b822b4076854df902899bd54, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7020009214270148615, guid: 394dd090b822b4076854df902899bd54,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 377307169}
+      addedObject: {fileID: 1973894343}
   m_SourcePrefab: {fileID: 100100000, guid: 394dd090b822b4076854df902899bd54, type: 3}
 --- !u!114 &1973894342 stripped
 MonoBehaviour:
@@ -8557,6 +8550,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7ecd681b26b44dc6a0fd8a7479a13e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1973894343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 377307168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6b643e492b52e94cb53ac9140000ab9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocity: {x: 0, y: 0, z: 0}
 --- !u!4 &1977161770 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6298868284007542991, guid: 99a8578a2180fe04b894fa6decac87ac,
