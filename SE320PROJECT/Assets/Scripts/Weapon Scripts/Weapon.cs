@@ -1,6 +1,5 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Weapon : MonoBehaviour
@@ -8,9 +7,9 @@ public class Weapon : MonoBehaviour
     [Header("References")]
     [SerializeField] private WeaponMethods weaponMethods;
 
-    [SerializeField] private Transform muzzle; 
+    [SerializeField] private Transform muzzle;
     private float timeSinceLastShot;
-    private UIManager uiManager; 
+    private UIManager uiManager;
 
     private void Start()
     {
@@ -21,49 +20,62 @@ public class Weapon : MonoBehaviour
 
     public void StartReload()
     {
-        if (!weaponMethods.reloading)
+        if (this != null)
         {
-            StartCoroutine(Reload());
+            if (!weaponMethods.reloading)
+            {
+                StartCoroutine(Reload());
+            }
         }
     }
 
     private IEnumerator Reload()
     {
-        weaponMethods.reloading = true;
-        yield return new WaitForSeconds(weaponMethods.reloadTime);
-        weaponMethods.currentAmmo = weaponMethods.magSize;
-        uiManager.UpdateAmmo(weaponMethods.currentAmmo);
-        weaponMethods.reloading = false;
+        if (this != null) 
+        {
+            weaponMethods.reloading = true;
+            yield return new WaitForSeconds(weaponMethods.reloadTime);
+            weaponMethods.currentAmmo = weaponMethods.magSize;
+            uiManager.UpdateAmmo(weaponMethods.currentAmmo);
+            weaponMethods.reloading = false;
+        }
     }
-    private bool CanShoot()=> !weaponMethods.reloading && timeSinceLastShot>1f/(weaponMethods.fireRate/60f);
+
+    private bool CanShoot() => !weaponMethods.reloading && timeSinceLastShot > 1f / (weaponMethods.fireRate / 60f);
+
     private void Shoot()
     {
-        if (weaponMethods.currentAmmo > 0 )
+        if (this != null && weaponMethods != null && muzzle != null)
         {
-            if (CanShoot())
+            if (weaponMethods.currentAmmo > 0)
             {
-                if (Physics.Raycast(muzzle.position, transform.forward,out RaycastHit hitInfo, weaponMethods.range))
+                if (CanShoot())
                 {
-                    EnemyTakeDamage giveDamage = hitInfo.transform.GetComponent<EnemyTakeDamage>();
-                    giveDamage?.TakeDamage(weaponMethods.damage);
+                    if (Physics.Raycast(muzzle.position, transform.forward, out RaycastHit hitInfo, weaponMethods.range))
+                    {
+                        EnemyTakeDamage giveDamage = hitInfo.transform.GetComponent<EnemyTakeDamage>();
+                        giveDamage?.TakeDamage(weaponMethods.damage);
+                    }
+                    Debug.Log("weapon");
+                    uiManager.UpdateAmmo(weaponMethods.currentAmmo);
+                    weaponMethods.currentAmmo--;
+                    timeSinceLastShot = 0;
+                    OnWeaponShot();
                 }
-                Debug.Log("weapon");
-                uiManager.UpdateAmmo(weaponMethods.currentAmmo);
-                weaponMethods.currentAmmo--;
-                timeSinceLastShot = 0;
-                OnWeaponShot();
             }
         }
     }
 
     private void Update()
     {
-        timeSinceLastShot += Time.deltaTime;
+        if (this != null)
+        {
+            timeSinceLastShot += Time.deltaTime;
+        }
     }
 
     private void OnWeaponShot()
     {
 
     }
-
 }

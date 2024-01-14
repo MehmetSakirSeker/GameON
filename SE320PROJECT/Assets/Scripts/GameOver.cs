@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class GameOver : MonoBehaviour
 {
-   [SerializeField] private Canvas gameOverCanvas;
+   
 
    public void TryAgain()
    {
