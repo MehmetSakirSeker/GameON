@@ -10,7 +10,7 @@ public class Dash : MonoBehaviour
     private Rigidbody rb;
     
     private bool dashing = true;
-    private float dashingPower = 30f;
+    private float dashingPower = 15f;
     private float dashingCooldown = 0.7f;
 
     private void Start()
@@ -22,7 +22,6 @@ public class Dash : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Q) && dashing)
         {
-            Debug.Log("xd");
             StartCoroutine(DashMethod());
         }
         

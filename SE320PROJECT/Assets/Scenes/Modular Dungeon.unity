@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.35872698, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3474,6 +3474,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 231856560}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &246204780 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 813839003625129915, guid: 89ccafcf9713ed842a6e48ecd3f637d8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1648350324}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &250139237
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18296,12 +18302,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1256717143}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1262395485 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3823242291346249080, guid: 394dd090b822b4076854df902899bd54,
-    type: 3}
-  m_PrefabInstance: {fileID: 641926253025968372}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1265691509
 GameObject:
   m_ObjectHideFlags: 0
@@ -20311,7 +20311,7 @@ PrefabInstance:
         type: 3}
       propertyPath: attackPointForWizard
       value: 
-      objectReference: {fileID: 1262395485}
+      objectReference: {fileID: 1430852096}
     - target: {fileID: 4466907487834506469, guid: 89ccafcf9713ed842a6e48ecd3f637d8,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -20382,6 +20382,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89ccafcf9713ed842a6e48ecd3f637d8, type: 3}
+--- !u!4 &1430852096 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 813839003625129915, guid: 89ccafcf9713ed842a6e48ecd3f637d8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1430852095}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1434192816
 GameObject:
   m_ObjectHideFlags: 0
@@ -23308,7 +23314,7 @@ PrefabInstance:
         type: 3}
       propertyPath: attackPointForWizard
       value: 
-      objectReference: {fileID: 1262395485}
+      objectReference: {fileID: 246204780}
     - target: {fileID: 4466907487834506469, guid: 89ccafcf9713ed842a6e48ecd3f637d8,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -25923,7 +25929,7 @@ PrefabInstance:
         type: 3}
       propertyPath: attackPointForWizard
       value: 
-      objectReference: {fileID: 1262395485}
+      objectReference: {fileID: 1812200254}
     - target: {fileID: 4466907487834506469, guid: 89ccafcf9713ed842a6e48ecd3f637d8,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -25994,6 +26000,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89ccafcf9713ed842a6e48ecd3f637d8, type: 3}
+--- !u!4 &1812200254 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 813839003625129915, guid: 89ccafcf9713ed842a6e48ecd3f637d8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1812200253}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1832189328
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26100,7 +26112,7 @@ PrefabInstance:
         type: 3}
       propertyPath: attackPointForWizard
       value: 
-      objectReference: {fileID: 1262395485}
+      objectReference: {fileID: 1833985780}
     - target: {fileID: 4466907487834506469, guid: 89ccafcf9713ed842a6e48ecd3f637d8,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -26171,6 +26183,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89ccafcf9713ed842a6e48ecd3f637d8, type: 3}
+--- !u!4 &1833985780 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 813839003625129915, guid: 89ccafcf9713ed842a6e48ecd3f637d8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1833985779}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1839087381
 GameObject:
   m_ObjectHideFlags: 0
@@ -30301,7 +30319,7 @@ PrefabInstance:
     - target: {fileID: 581024267694551664, guid: 394dd090b822b4076854df902899bd54,
         type: 3}
       propertyPath: m_Volume
-      value: 0.2
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 2020535359747136161, guid: 394dd090b822b4076854df902899bd54,
         type: 3}
@@ -31579,7 +31597,7 @@ PrefabInstance:
         type: 3}
       propertyPath: attackPointForWizard
       value: 
-      objectReference: {fileID: 1262395485}
+      objectReference: {fileID: 2583035387994717533}
     - target: {fileID: 4466907487834506469, guid: 89ccafcf9713ed842a6e48ecd3f637d8,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -31650,6 +31668,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89ccafcf9713ed842a6e48ecd3f637d8, type: 3}
+--- !u!4 &2583035387994717533 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 813839003625129915, guid: 89ccafcf9713ed842a6e48ecd3f637d8,
+    type: 3}
+  m_PrefabInstance: {fileID: 2583035387994717532}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2872218461298031000
 PrefabInstance:
   m_ObjectHideFlags: 0

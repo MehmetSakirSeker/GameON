@@ -84,6 +84,7 @@ GameObject:
   - component: {fileID: 581024267694551664}
   - component: {fileID: 8538183805861619581}
   - component: {fileID: 6147530386156750587}
+  - component: {fileID: 8960919805335479689}
   m_Layer: 1
   m_Name: Hero
   m_TagString: Player
@@ -302,7 +303,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitPoints: 100000
-  score: 0
   slider: {fileID: 0}
   healthUI: {fileID: 0}
 --- !u!114 &4426087365262997428
@@ -330,7 +330,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.034
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -441,7 +441,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4c47182173a54776875ffd03aff4210, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameOverCanvas: {fileID: 0}
+--- !u!114 &8960919805335479689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7020009214270148615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6b643e492b52e94cb53ac9140000ab9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocity: {x: 0, y: 0, z: 0}
 --- !u!1 &7226398261581206621
 GameObject:
   m_ObjectHideFlags: 0
